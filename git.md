@@ -28,6 +28,7 @@ diff 比较工作区和暂存区的区别，diff head 比较工作区和版本�
 
     $ git remote add <name> <url>
     $ git remote rm <name>
+    $ git push origin <branch-name>
 本地仓库和某个远程仓库建立联系。
 
     $ git push -u origin master
@@ -39,12 +40,22 @@ clone 某个git库到当前文件夹下
     $ git branch <name>
     $ git checkout <name>
 	$ git checkout -b <name>
+	$ git checkout -b <branch-name> [<origin/branch-name>]
 创建分支、检出分支，第三句是前两句的合并。注意如果在某个分支内进行了修改必须 commit 后才可以切换到其它分支。（可能是因为如果不提交就切换会丢失修改）
 
     $ git merge <name>
 合并某分支到当前分支。
 
     $ git branch -d <name>
-删除某个分支
+    $ git branch --set-upstream-to <branch-name> origin/<branch-name>
+删除某个分支 -D可以强制删除未合并的分支
 
- 
+	$ git stash 
+	$ git stash pop
+将当前工作区的改动储存起来，pop 弹出
+
+    $ git cherry-pick <commit>
+将某次修改复制到当前分支
+
+- 参考资料  
+[廖雪峰Git教程](https://www.liaoxuefeng.com/wiki/896043488029600 "廖雪峰")
